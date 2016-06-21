@@ -1,0 +1,87 @@
+﻿<Window x:Class="GHMonitor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GHMonitor"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" WindowState="Maximized" DataContext="{Binding Main, Mode=OneWay, Source={StaticResource Locator}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <DockPanel Grid.Column="0" Grid.Row="0" LastChildFill="True">
+            <TextBlock DockPanel.Dock="Top" FontSize="45">A区</TextBlock>
+            <!--<ScrollViewer VerticalScrollBarVisibility="Auto">-->
+            <ItemsControl ItemsSource="{Binding SectionA}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <local:GHSection DataContext="{Binding}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+            <!--</ScrollViewer>-->
+        </DockPanel>
+        <DockPanel Grid.Column="0" Grid.Row="1" LastChildFill="True">
+            <TextBlock DockPanel.Dock="Top" FontSize="45" >B区</TextBlock>
+            <!--<ScrollViewer VerticalScrollBarVisibility="Auto">-->
+            <ItemsControl ItemsSource="{Binding SectionB}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <local:GHSection DataContext="{Binding}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+            <!--</ScrollViewer>-->
+        </DockPanel>
+        <DockPanel Grid.Column="1" Grid.Row="0" LastChildFill="True">
+            <TextBlock DockPanel.Dock="Top" FontSize="45" >C区</TextBlock>
+            <!--<ScrollViewer VerticalScrollBarVisibility="Auto">-->
+            <ItemsControl ItemsSource="{Binding SectionC}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <local:GHSection DataContext="{Binding}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+            <!--</ScrollViewer>-->
+        </DockPanel>
+        <DockPanel Grid.Column="1" Grid.Row="1" LastChildFill="True">
+            <TextBlock DockPanel.Dock="Top" FontSize="45">D区</TextBlock>
+            <!--<ScrollViewer VerticalScrollBarVisibility="Auto">-->
+            <ItemsControl ItemsSource="{Binding SectionD}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <local:GHSection DataContext="{Binding}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+            <!--</ScrollViewer>-->
+        </DockPanel>
+    </Grid>
+</Window>
